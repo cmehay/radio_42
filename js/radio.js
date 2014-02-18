@@ -4,7 +4,7 @@
 	var radio = {};
 	var priv = {};
 
-	var audio = document.getElementByTagName('audio')[0];
+	var audio = document.getElementsByTagName('audio')[0];
 
 	priv.play = function()
 	{
