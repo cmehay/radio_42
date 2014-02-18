@@ -3,9 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<title>Radio quarante-deux</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style/style.css">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-	<script src="js/jquery-2.10.min.js"></script>
+	<script src="js/jquery-2.1.0.min.js"></script>
 	<script src="js/radio.js"></script>
 </head>
 <body>
