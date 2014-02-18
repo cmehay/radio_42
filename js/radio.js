@@ -4,22 +4,30 @@
 	var radio = {};
 	var priv = {};
 
+	var audio = document.createElement("audio");
+	if (audio != null)
+	{
+		audio.src = "http://42.ham-radio-op.net:8080";
+		audio.volume = 0.0;
+		audio.preload = true;
+	}
+
 	priv.play = function()
 	{
 		$("#pause_button").addClass('hidden');
 		$("#play_button").removeClass('hidden');
-		$("audio").play();
-		$("audio").animate({volume: 1.0}, 1000);
+		audio.play();
+		audio.animate({volume: 1.0}, 1000);
 	};
 
 	priv.pause = function()
 	{
 		$("#pause_button").removeClass('hidden');
 		$("#play_button").addClass('hidden');
-		$("audio").animate({volume: 0.0}, 1000);
+		audio.animate({volume: 0.0}, 1000);
 		setTimeout(function()
 		{
-			$("audio").pause();
+			audio.pause();
 		}, 1000);
 	}
 	radio.onready = function(){
