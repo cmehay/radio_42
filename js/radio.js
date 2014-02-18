@@ -4,10 +4,10 @@
 	var radio = {};
 	var priv = {};
 
-	var audio = document.getElementsByTagName('audio')[0];
 
 	priv.play = function()
 	{
+		var audio = document.getElementsByTagName('audio')[0];
 		$("#pause_button").addClass('hidden');
 		$("#play_button").removeClass('hidden');
 		audio.play();
@@ -16,6 +16,7 @@
 
 	priv.pause = function()
 	{
+		var audio = document.getElementsByTagName('audio')[0];
 		$("#pause_button").removeClass('hidden');
 		$("#play_button").addClass('hidden');
 
