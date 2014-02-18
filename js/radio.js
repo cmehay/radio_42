@@ -11,6 +11,7 @@
 		$("#pause_button").addClass('hidden');
 		$("#play_button").removeClass('hidden');
 		audio.play();
+		$("audio").animate({volume: 0.0}, 1);
 		$("audio").animate({volume: 1.0}, 1000);
 	};
 
