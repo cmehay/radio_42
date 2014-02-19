@@ -15,7 +15,8 @@
 	<div id="player_button">
 		<div id="play_button"><i class="fa fa-play"></i></div>
 		<div id="pause_button" class="hidden"><i class="fa fa-pause"></i></div>
+		<div id="round">◌</div>
 	</div>
-	<div id="round"></div>
+	<div id="wait">Please wait a little bit</div>
 </body>
 </html>

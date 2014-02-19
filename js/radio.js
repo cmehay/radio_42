@@ -5,9 +5,8 @@
 	var priv = {};
 
 
-	priv.play = function()
+	priv.play = function(audio)
 	{
-		var audio = document.getElementsByTagName('audio')[0];
 		$("#play_button").addClass('hidden');
 		$("#pause_button").removeClass('hidden');
 		$("audio").animate({volume: 0.0}, 0);
@@ -15,9 +14,8 @@
 		$("audio").animate({volume: 1.0}, 1000);
 	};
 
-	priv.pause = function()
+	priv.pause = function(audio)
 	{
-		var audio = document.getElementsByTagName('audio')[0];
 		$("#play_button").removeClass('hidden');
 		$("#pause_button").addClass('hidden');
 
@@ -27,22 +25,21 @@
 			audio.pause();
 		}, 1000);
 	}
-	radio.buffer = function()
+	radio.buffer = function(audio)
 	{
-		var audio = document.getElementsByTagName('audio')[0];
 		audio.play();
 		setTimeout(audio.pause(), 10);
 	}
-	radio.onready = function()
+	radio.onready = function(audio)
 	{
-		$("#play_button").click(function()
+		$("#play_button").click(function(audio)
 		{
-			priv.play();
+			priv.play(audio);
 		});
 
-		$("#pause_button").click(function()
+		$("#pause_button").click(function(audio)
 		{
-			priv.pause();
+			priv.pause(audio);
 		});
 	};
 
@@ -50,6 +47,7 @@
 })();
 
 $(document).ready(function(){
-	radio.buffer();
-	radio.onready();
+	var audio = document.getElementsByTagName('audio')[0];
+	radio.buffer(audio);
+	radio.onready(audio);
 });
