@@ -45,7 +45,7 @@
 		var but_wid = $("#player_button").width();
 
 		$("#player_button").css("top", (hei - but_hei) / 2);
-		$("#player_button").css("left", (wid - wid_hei) / 2);
+		$("#player_button").css("left", (wid - but_wid) / 2);
 	}
 
 	radio.onready = function()
