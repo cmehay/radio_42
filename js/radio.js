@@ -5,8 +5,9 @@
 	var priv = {};
 
 
-	priv.play = function(audio)
+	priv.play = function()
 	{
+		var audio = document.getElementsByTagName('audio')[0];
 		$("#play_button").addClass('hidden');
 		$("#pause_button").removeClass('hidden');
 		$("audio").animate({volume: 0.0}, 0);
@@ -14,8 +15,9 @@
 		$("audio").animate({volume: 1.0}, 1000);
 	};
 
-	priv.pause = function(audio)
+	priv.pause = function()
 	{
+		var audio = document.getElementsByTagName('audio')[0];
 		$("#play_button").removeClass('hidden');
 		$("#pause_button").addClass('hidden');
 
@@ -25,21 +27,22 @@
 			audio.pause();
 		}, 1000);
 	}
-	radio.buffer = function(audio)
+	radio.buffer = function()
 	{
+		var audio = document.getElementsByTagName('audio')[0];
 		audio.play();
-		setTimeout(audio.pause(), 10);
+		setTimeout("audio.pause()", 10);
 	}
-	radio.onready = function(audio)
+	radio.onready = function()
 	{
-		$("#play_button").click(function(audio)
+		$("#play_button").click(function()
 		{
-			priv.play(audio);
+			priv.play();
 		});
 
-		$("#pause_button").click(function(audio)
+		$("#pause_button").click(function()
 		{
-			priv.pause(audio);
+			priv.pause();
 		});
 	};
 
@@ -47,7 +50,6 @@
 })();
 
 $(document).ready(function(){
-	var audio = document.getElementsByTagName('audio')[0];
-	radio.buffer(audio);
-	radio.onready(audio);
+	radio.buffer();
+	radio.onready();
 });
