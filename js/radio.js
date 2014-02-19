@@ -81,7 +81,6 @@
 })();
 
 $(document).ready(function(){
-	radio.place_button();
 	radio.buffer();
 	radio.onready();
 });
