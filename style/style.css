@@ -71,6 +71,7 @@ h4
 	position: fixed;
 
 	-webkit-animation: rotate 60s infinite linear;
+	-webkit-animation-play-state: paused;
 }
 
 @-webkit-keyframes rotate {
