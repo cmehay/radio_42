@@ -10,7 +10,7 @@
 		var audio = document.getElementsByTagName('audio')[0];
 		$("#play_button").addClass('hidden');
 		$("#pause_button").removeClass('hidden');
-		$("audio").attr("volume", 0);
+		$("audio").animate({volume: 0.0}, 0);
 		audio.play();
 		$("audio").animate({volume: 1.0}, 1000);
 	};
