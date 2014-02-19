@@ -8,8 +8,8 @@
 	priv.play = function()
 	{
 		var audio = document.getElementsByTagName('audio')[0];
-		$("#pause_button").addClass('hidden');
-		$("#play_button").removeClass('hidden');
+		$("#play_button").addClass('hidden');
+		$("#pause_button").removeClass('hidden');
 		audio.play();
 		
 		$("audio").animate({volume: 1.0}, 1000);
@@ -18,8 +18,8 @@
 	priv.pause = function()
 	{
 		var audio = document.getElementsByTagName('audio')[0];
-		$("#pause_button").removeClass('hidden');
-		$("#play_button").addClass('hidden');
+		$("#play_button").removeClass('hidden');
+		$("#pause_button").addClass('hidden');
 
 		$("audio").animate({volume: 0.0}, 1000);
 		setTimeout(function()
