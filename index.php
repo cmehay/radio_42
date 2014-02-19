@@ -18,6 +18,6 @@
 			<div id="round"></div>
 		</div>
 	</div>
-	<div id="wait">Please wait a little bit</div>
+	<div id="wait">Please wait a little...</div>
 </body>
 </html>

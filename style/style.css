@@ -22,6 +22,7 @@ h4
 	width: 100%;
 	top: 0;
 	left: 0;
+	background-color: rgba(0, 0, 0, 0.71);
 }
 
 #player_button
@@ -72,6 +73,19 @@ h4
 
 	-webkit-animation: rotate 60s infinite linear;
 	-webkit-animation-play-state: paused;
+	-moz-animation: rotate 60s infinite linear;
+	-moz-animation-play-state: paused;
+	animation: rotate 60s infinite linear;
+	animation-play-state: paused;
+}
+
+#wait
+{
+	height: 200px;
+	width: 300px;
+	background-color: white;
+	margin-top: 50%;
+	margin-left: 50%;
 }
 
 @-webkit-keyframes rotate {
@@ -80,5 +94,23 @@ h4
   }
   to { 
     -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes rotate {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to { 
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to { 
+    transform: rotate(360deg);
   }
 }
