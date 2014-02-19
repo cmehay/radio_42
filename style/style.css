@@ -51,9 +51,14 @@ h4
 
 #round
 {
+	pointer-events: none;
 	background-image: url(img/round.png);
 	background-repeat: no-repeat;
 	height: 100%;
-	background-size: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-size: 40%;
 	background-position: center;
+	position: fixed;
 }
