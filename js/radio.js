@@ -5,6 +5,20 @@
 	var priv = {};
 
 
+	priv.start_anim = function()
+	{
+		$("#round").css("-webkit-animation-play-state", "running");
+		$("#round").css("-moz-animation-play-state", "running");
+		$("#round").css("animation-play-state", "running");
+	}
+
+	priv.stop_anim = function()
+	{
+		$("#round").css("-webkit-animation-play-state", "paused");
+		$("#round").css("-moz-animation-play-state", "paused");
+		$("#round").css("animation-play-state", "paused");
+	}
+
 	priv.play = function()
 	{
 		var audio = document.getElementsByTagName('audio')[0];
@@ -14,6 +28,7 @@
 		$("audio").animate({volume: 0.0}, 0);
 		audio.play();
 		$("audio").animate({volume: 1.0}, 1000);
+		priv.start_anim();
 	};
 
 	priv.pause = function()
@@ -28,6 +43,7 @@
 		{
 			audio.pause();
 		}, 1000);
+		priv.stop_anim();
 	}
 
 	radio.buffer = function()
