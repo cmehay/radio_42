@@ -12,10 +12,12 @@
 <body>
 	<h4>$> ./radio_42</h4>
 	<audio preload volume="0.0" src="http://42.ham-radio-op.net:8080"></audio>
-	<div id="player_button">
-		<div id="play_button"><i class="fa fa-play"></i></div>
-		<div id="pause_button" class="hidden"><i class="fa fa-pause"></i></div>
-		<div id="round">◌</div>
+	<div id="englobe">
+		<div id="player_button">
+			<div id="play_button"><i class="fa fa-play"></i></div>
+			<div id="pause_button" class="hidden"><i class="fa fa-pause"></i></div>
+			<div id="round"></div>
+		</div>
 	</div>
 	<div id="wait">Please wait a little bit</div>
 </body>
