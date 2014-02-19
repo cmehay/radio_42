@@ -28,14 +28,23 @@ h4
 {
 	height: 50%;
 	width: 50%;
+	position: fixed;
 }
 
 #play_button
 {
 	background-image: url(img/play.png);
+	background-repeat: no-repeat;
+	height: 100%;
+	background-size: 40%;
+	background-position: center;
 }
 
 #pause_button
 {
 	background-image: url(img/pause.png);
+	background-repeat: no-repeat;
+	height: 100%;
+	background-size: 40%;
+	background-position: center;
 }
