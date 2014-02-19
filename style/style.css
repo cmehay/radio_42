@@ -17,7 +17,27 @@ h4
 
 #englobe
 {
-	position: absolute;
+	position: fixed;
 	height: 100%;
 	width: 100%;
+	top: 0;
+	left: 0;
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+	display: -moz-box;
+	-moz-box-orient: horizontal;
+	-moz-box-pack: center;
+	-moz-box-align: center;
+}
+
+#play_button
+{
+	background-image: url(img/play.png);
+}
+
+#pause_button
+{
+	background-image: url(img/pause.png);
 }
