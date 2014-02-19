@@ -31,7 +31,7 @@
 	{
 		var audio = document.getElementsByTagName('audio')[0];
 		audio.play();
-		setTimeout("audio.pause()", 10);
+		setTimeout(audio.pause(), 10);
 	}
 	radio.onready = function()
 	{
