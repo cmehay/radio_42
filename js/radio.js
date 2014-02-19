@@ -42,8 +42,8 @@
 		setTimeout(function()
 		{
 			audio.pause();
+			priv.stop_anim();
 		}, 1000);
-		priv.stop_anim();
 	}
 
 	radio.buffer = function()
