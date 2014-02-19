@@ -48,3 +48,12 @@ h4
 	background-size: 40%;
 	background-position: center;
 }
+
+#round
+{
+	background-image: url(img/round.png);
+	background-repeat: no-repeat;
+	height: 100%;
+	background-size: 100%;
+	background-position: center;
+}
