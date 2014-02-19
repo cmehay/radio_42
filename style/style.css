@@ -62,10 +62,7 @@ h4
 	background-position: center;
 	position: fixed;
 
-	-webkit-animation-name:             rotate; 
-	-webkit-animation-duration:         0.5s; 
-	-webkit-animation-iteration-count:  infinite;
-	-webkit-transition-timing-function: linear;
+	-webkit-animation: rotate 60s infinite linear;
 }
 
 @-webkit-keyframes rotate {
