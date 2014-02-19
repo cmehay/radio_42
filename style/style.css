@@ -41,6 +41,7 @@ h4
 	left: 0;
 	background-size: 40%;
 	background-position: center;
+	position: fixed;
 }
 
 #pause_button
