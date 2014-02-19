@@ -3,3 +3,14 @@
 	display: none;
 }
 
+@font-face
+{
+	font-family: prompt;
+	src: url('./font/SVBasicManual.ttf');
+}
+
+h4
+{
+	font-family: prompt;
+	font-size: 2.3em;
+}
