@@ -27,7 +27,14 @@
 			audio.pause();
 		}, 1000);
 	}
-	radio.onready = function(){
+	radio.buffer = function()
+	{
+		var audio = document.getElementsByTagName('audio')[0];
+		audio.play();
+		setTimeout("audio.pause()", 10);
+	}
+	radio.onready = function()
+	{
 		$("#play_button").click(function()
 		{
 			priv.play();
@@ -43,5 +50,6 @@
 })();
 
 $(document).ready(function(){
+	radio.buffer();
 	radio.onready();
 });
