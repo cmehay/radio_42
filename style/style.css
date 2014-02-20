@@ -88,6 +88,14 @@ h4
 	left: 50%;
 	margin-left: -100px; 
 	margin-top: -50px;
+	position: fixed;
+	border-radius: 20px;
+	box-shadow: -1px 2px 33px 3px rgba(0, 0, 0, 0.5) inset;
+}
+
+#wait p
+{
+	
 }
 
 @-webkit-keyframes rotate {
