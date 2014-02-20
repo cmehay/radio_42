@@ -49,7 +49,7 @@
 	radio.buffer = function()
 	{
 		var audio = document.getElementsByTagName('audio')[0];
-		priv.audio.play();
+		audio.play();
 		setTimeout(audio.pause(), 10);
 	}
 
