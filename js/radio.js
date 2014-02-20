@@ -46,11 +46,10 @@
 		}, 1000);
 	}
 
-	radio.buffer = function()
+	priv.buffer = function()
 	{
-		var audio = document.getElementsByTagName('audio')[0];
-		audio.play();
-		setTimeout(audio.pause(), 10);
+		priv.audio.play();
+		setTimeout(priv.audio.pause(), 10);
 	}
 
 	radio.place_button = function()
@@ -66,6 +65,7 @@
 
 	radio.onready = function()
 	{
+		
 		priv.set_audio();
 		$("#play_button").click(function()
 		{
