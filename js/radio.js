@@ -65,7 +65,7 @@
 
 	radio.onready = function()
 	{
-		
+
 		priv.set_audio();
 		$("#play_button").click(function()
 		{
@@ -82,6 +82,5 @@
 })();
 
 $(document).ready(function(){
-	radio.buffer();
 	radio.onready();
 });
