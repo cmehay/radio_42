@@ -81,11 +81,13 @@ h4
 
 #wait
 {
-	height: 200px;
-	width: 300px;
+	height: 100px;
+	width: 200px;
 	background-color: white;
-	margin-top: 50%;
-	margin-left: 50%;
+	top: 50%;
+	left: 50%;
+	margin-left: -100px; 
+	margin-top: -50px;
 }
 
 @-webkit-keyframes rotate {
