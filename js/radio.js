@@ -51,9 +51,8 @@
 		setTimeout(priv.audio.pause(), 10);
 		setTimeout(function()
 			{
-				$("audio").animate({background-color: "rgba(0, 0, 0, 0.0)"}, 600);
+				$("#englobe").animate({opacity: 0}, 600);
 				$("#wait").fadeout(500);
-				$("#englobe")animate({volume: 1.0}, 1000);
 				$("#round").addClass('dont_click');
 				setTimeout(function()
 					{
