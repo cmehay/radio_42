@@ -4,7 +4,10 @@
 	var radio = {};
 	var priv = {};
 
-	priv.audio = document.getElementsByTagName('audio')[0];
+	priv.set_audio = function()
+	{
+		priv.audio = document.getElementsByTagName('audio')[0];
+	}
 
 	priv.start_anim = function()
 	{
@@ -63,6 +66,7 @@
 
 	radio.onready = function()
 	{
+		priv.set_audio();
 		$("#play_button").click(function()
 		{
 			priv.play();
