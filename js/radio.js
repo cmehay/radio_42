@@ -37,7 +37,7 @@
 	{
 		$("#play_button").removeClass('hidden');
 		$("#pause_button").addClass('hidden');
-
+		("audio").animate({volume: 0.0}, 1000);
 		setTimeout(function()
 		{
 			priv.audio.pause();
