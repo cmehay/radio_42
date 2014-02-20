@@ -51,7 +51,7 @@
 		setTimeout(priv.audio.pause(), 10);
 		setTimeout(function()
 			{
-				$("#englobe").animate({"backgroundColor": "transparent"}, 600);
+				$("#englobe").css({ 'background-color': 'rgba(0, 0, 0, 0.0)' });
 				$("#wait").fadeOut(500);
 				$("#round").addClass('dont_click');
 				setTimeout(function()
