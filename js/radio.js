@@ -4,6 +4,7 @@
 	var radio = {};
 	var priv = {};
 
+	priv.audio = document.getElementsByTagName('audio')[0];
 
 	priv.start_anim = function()
 	{
@@ -21,27 +22,23 @@
 
 	priv.play = function()
 	{
-		var audio = document.getElementsByTagName('audio')[0];
-
 		$("#play_button").addClass('hidden');
 		$("#pause_button").removeClass('hidden');
 		$("audio").animate({volume: 0.0}, 0);
-		audio.play();
+		priv.audio.play();
 		$("audio").animate({volume: 1.0}, 1000);
 		priv.start_anim();
 	};
 
 	priv.pause = function()
 	{
-		var audio = document.getElementsByTagName('audio')[0];
-
 		$("#play_button").removeClass('hidden');
 		$("#pause_button").addClass('hidden');
 
 		$("audio").animate({volume: 0.0}, 1000);
 		setTimeout(function()
 		{
-			audio.pause();
+			priv.audio.pause();
 			priv.stop_anim();
 		}, 1000);
 	}
@@ -49,7 +46,7 @@
 	radio.buffer = function()
 	{
 		var audio = document.getElementsByTagName('audio')[0];
-		audio.play();
+		priv.audio.play();
 		setTimeout(audio.pause(), 10);
 	}
 
