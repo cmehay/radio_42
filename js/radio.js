@@ -38,7 +38,6 @@
 		$("#play_button").removeClass('hidden');
 		$("#pause_button").addClass('hidden');
 
-		$("audio").animate({volume: 0.0}, 1000);
 		setTimeout(function()
 		{
 			priv.audio.pause();
@@ -50,6 +49,17 @@
 	{
 		priv.audio.play();
 		setTimeout(priv.audio.pause(), 10);
+		setTimeout(function()
+			{
+				$("audio").animate({background-color: "rgba(0, 0, 0, 0.0)"}, 600);
+				$("#wait").fadeout(500);
+				$("#englobe")animate({volume: 1.0}, 1000);
+				$("#round").addClass('dont_click');
+				setTimeout(function()
+					{
+						$("#wait").addClass('hidden');
+					}, 500);
+			}, 5000);
 	}
 
 	radio.place_button = function()
@@ -67,6 +77,7 @@
 	{
 
 		priv.set_audio();
+		priv.buffer();
 		$("#play_button").click(function()
 		{
 			priv.play();

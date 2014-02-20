@@ -9,6 +9,11 @@
 	src: url('./font/SVBasicManual.ttf');
 }
 
+.dont_click
+{
+	pointer-events: none;
+}
+
 h4
 {
 	font-family: prompt;
@@ -60,7 +65,6 @@ h4
 
 #round
 {
-	pointer-events: none;
 	background-image: url(img/round.png);
 	background-repeat: no-repeat;
 	height: 100%;
