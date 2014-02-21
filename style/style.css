@@ -1,3 +1,8 @@
+html
+{
+	background-image: url(img/background.gif);
+}
+
 .hidden
 {
 	display: none;
@@ -29,8 +34,9 @@ h4
 	left: 0;
 	background-color: rgba(0, 0, 0, 0.71);
 	-webkit-transition:background-color 1s;
-    -moz-transition:background-color 1s;
-    transition:background-color 1s;
+	-moz-transition:background-color 1s;
+	transition:background-color 1s;
+
 }
 
 #player_button
