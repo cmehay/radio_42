@@ -22,7 +22,7 @@
 			<div id="round"></div>
 		</div>
 	</div>
-	<div id="wait"><p>Please wait...</p></div>
-	<div id="offline" class="hidden"><p>Offline :/</p></div>
+	<div id="wait" class="center"><p>Please wait...</p></div>
+	<div id="offline" class="center hidden"><p>Offline :/</p></div>
 </body>
 </html>
