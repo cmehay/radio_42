@@ -77,6 +77,7 @@
 
 		priv.set_audio();
 		priv.buffer();
+		priv.pause();
 		$("#play_button").click(function()
 		{
 			priv.play();
