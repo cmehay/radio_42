@@ -86,8 +86,8 @@ h4
 
 	animation: rotate 60s infinite linear;
 	animation-play-state: paused;
-	-webkit-animation-play-state: paused;
 	-webkit-animation: rotate 60s infinite linear;
+	-webkit-animation-play-state: paused;
 	-moz-animation: rotate 60s infinite linear;
 	-moz-animation-play-state: paused;
 }
