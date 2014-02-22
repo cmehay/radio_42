@@ -99,11 +99,19 @@ h4
 	background-color: white;
 	top: 50%;
 	left: 50%;
-	margin-left: -100px; 
+	margin-left: -100px;
 	margin-top: -50px;
 	position: fixed;
 	border-radius: 20px;
 	box-shadow: -1px 2px 33px 3px rgba(0, 0, 0, 0.5) inset;
+}
+
+.large
+{
+	height: 50px;
+	width: 400px;
+	margin-left: -200px;
+	margin-top: -25px;
 }
 
 .center p
@@ -115,11 +123,21 @@ h4
 	font-family: prompt;
 }
 
+#footer
+{
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin: 3px;
+	font-family: prompt;
+	cursor: pointer;
+}
+
 @-webkit-keyframes rotate {
   from {
     -webkit-transform: rotate(0deg);
   }
-  to { 
+  to {
     -webkit-transform: rotate(360deg);
   }
 }
@@ -128,7 +146,7 @@ h4
   from {
     -moz-transform: rotate(0deg);
   }
-  to { 
+  to {
     -moz-transform: rotate(360deg);
   }
 }
@@ -137,7 +155,7 @@ h4
   from {
     transform: rotate(0deg);
   }
-  to { 
+  to {
     transform: rotate(360deg);
   }
 }
