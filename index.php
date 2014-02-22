@@ -24,8 +24,8 @@
 			</div>
 		</div>
 		<div id="wait" class="center"><p>Please wait...</p></div>
-		<div id="offline" class="center large hidden"><p>Offline :/</p></div>
-		<div id="vlc" class="center hidden">
+		<div id="offline" class="center hidden"><p>Offline :/</p></div>
+		<div id="vlc" class="center large hidden">
 			<p>http://42.ham-radio-op.net:8080</p>
 		</div>
 		<div id="footer">Listen in VLC</div>
