@@ -10,6 +10,10 @@
 </head>
 <body>
 	<h4>$> ./radio_42</h4>
+	<div id="track">
+		<div id="title"></div>
+		<div id="artist"></div>
+	</div>
 	<audio preload volume="0.0" src="http://42.ham-radio-op.net:8080"></audio>
 	<div id="englobe">
 		<div id="player_button">
@@ -19,5 +23,6 @@
 		</div>
 	</div>
 	<div id="wait"><p>Please wait...</p></div>
+	<div id="offline" class="hidden"><p>Offline :/</p></div>
 </body>
 </html>
