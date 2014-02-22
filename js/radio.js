@@ -46,7 +46,7 @@
 
 	priv.pause = function()
 	{
-		$("#round").addClass('dont_click');
+		$("#round").removeClass('click');
 		$("#play_button").removeClass('hidden');
 		$("#pause_button").addClass('hidden');
 		$("audio").animate({volume: 0.0}, 1000);
@@ -54,7 +54,7 @@
 		{
 			priv.audio.pause();
 			priv.stop_anim();
-			$("#round").removeClass('dont_click');
+			$("#round").addClass('click');
 			priv.ispaused = 1;
 		}, 1000);
 	}
@@ -68,7 +68,7 @@
 				$("#englobe").css({ 'background-color': 'rgba(0, 0, 0, 0.0)' });
 				$("#wait").fadeOut(500);
 				$("#track").fadeIn(500);
-				$("#round").addClass('dont_click');
+				$("#round").addClass('click');
 				setTimeout(function()
 					{
 						$("#wait").addClass('hidden');
@@ -83,7 +83,7 @@
 		$("#wait").fadeOut(500);
 		$("#englobe").css({ 'background-color': 'rgba(0, 0, 0, 0.7)' });
 		$("#offline").fadeIn(500);
-		$("#round").addClass('dont_click');
+		$("#round").addClass('click');
 	}
 
 	priv.check_song = function()
@@ -127,14 +127,14 @@
 	{
 		$("#englobe").css({ 'background-color': 'rgba(0, 0, 0, 0.7)' });
 		$("#vlc").fadeIn(500);
-		$("#round").addClass('dont_click');
+		$("#round").removeClass('click');
 	}
 
 	priv.hide_vlc = function()
 	{
 		$("#englobe").css({ 'background-color': 'rgba(0, 0, 0, 0.0)' });
 		$("#vlc").fadeOut(500);
-		$("#round").removeClass('dont_click');
+		$("#round").addClass('click');
 	}
 
 	radio.onready = function()

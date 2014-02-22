@@ -14,7 +14,7 @@ html
 	src: url('./font/SVBasicManual.ttf');
 }
 
-.dont_click
+.click
 {
 	pointer-events: none;
 }
