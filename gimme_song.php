@@ -2,6 +2,8 @@
 
 $mpc = shell_exec('mpc -f "%title%\n%artist%\n%album%"');
 
+echo $mpc
+
 if (!strstr($mpc, '[playing]'))
 {
 	$json = json_encode(array('is_runnig' => FALSE));
