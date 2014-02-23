@@ -86,6 +86,10 @@
 		$("#round").addClass('click');
 	}
 
+	priv.copy_to_clipbloard = function() {
+		window.prompt("Copy to clipboard: Ctrl+C, Enter", $("audio").attr("src"));
+	}
+
 	priv.check_song = function()
 	{
 		$.ajax({
@@ -125,9 +129,10 @@
 
 	priv.display_vlc = function()
 	{
-		$("#englobe").css({ 'background-color': 'rgba(0, 0, 0, 0.7)' });
-		$("#vlc").fadeIn(500);
-		$("#round").removeClass('click');
+		priv.copy_to_clipbloard();
+//		$("#englobe").css({ 'background-color': 'rgba(0, 0, 0, 0.7)' });
+//		$("#vlc").fadeIn(500);
+//		$("#round").removeClass('click');
 	}
 
 	priv.hide_vlc = function()
