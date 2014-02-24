@@ -75,6 +75,7 @@
 	radio.onready = function()
 	{
 
+		priv.stop_anim();
 		priv.set_audio();
 		priv.buffer();
 		$("#play_button").click(function()
