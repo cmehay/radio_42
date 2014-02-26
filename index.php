@@ -12,7 +12,7 @@
 		<h4>$> ./radio_42</h4>
 		<div id="track">
 			<h5>Now playing:</h5>
-			<div id="title"></div>
+			<div id="title"> </div>
 			<div id="artist">Nothing</div>
 		</div>
 		<audio preload volume="0.0" src="http://42.ham-radio-op.net:8080"></audio>
