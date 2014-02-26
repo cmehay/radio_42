@@ -3,8 +3,10 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+
 		<title>Radio quarante-deux</title>
 		<link rel="stylesheet" href="style/style.css">
+		<link rel="icon" type="image/png" href="style/img/ico.png" />
 		<script src="js/jquery-2.1.0.min.js"></script>
 		<script src="js/radio.js"></script>
 	</head>
