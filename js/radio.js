@@ -105,7 +105,7 @@
 			}
 			setTimeout(function()
 			{
-				if ($("#title").html() != json.title)
+				if ($("#title").text() != json.title)
 				{
 					$("#title").fadeTo(1000, 0);
 					setTimeout(function()
@@ -114,10 +114,10 @@
 						$("#title").fadeTo(1000, 1);
 					}, 2000);
 				}
-				console.log($("#artist").html());
+				console.log($("#artist").text());
 				console.log(json.artist);
 
-				if ($("#artist").html() != json.artist)
+				if ($("#artist").text() != json.artist)
 				{
 					$("#artist").fadeTo(1000, 0);
 					setTimeout(function()
