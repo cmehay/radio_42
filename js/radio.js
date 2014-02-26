@@ -62,7 +62,11 @@
 	priv.buffer = function()
 	{
 		priv.audio.play();
-		setTimeout(priv.audio.pause, 10);
+		setTimeout(function()
+		{
+			priv.audio.pause();
+
+		}, 10);
 		setTimeout(function()
 			{
 				$("#englobe").css({ 'background-color': 'rgba(0, 0, 0, 0.0)' });
@@ -114,8 +118,6 @@
 						$("#title").fadeTo(1000, 1);
 					}, 2000);
 				}
-				console.log($("#artist").text());
-				console.log(json.artist);
 
 				if ($("#artist").text() != json.artist)
 				{
