@@ -161,6 +161,13 @@ h4
 	text-align: right;
 }
 
+#track #artist
+{
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
+
 @-webkit-keyframes rotate {
   from {
     -webkit-transform: rotate(0deg);

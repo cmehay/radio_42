@@ -107,20 +107,20 @@
 			{
 				if ($("#title").html() != json.title)
 				{
-					$("#title").fadeOut(1000);
+					$("#title").fadeTo(1000, 0);
 					setTimeout(function()
 					{
 						$("#title").html(json.title);
-						$("#title").fadeIn(1000);
+						$("#title").fadeTo(1000, 1);
 					}, 2000);
 				}
 				if ($("#artist").html() != json.artist)
 				{
-					$("#artist").fadeOut(1000);
+					$("#artist").fadeTo(1000, 0);
 					setTimeout(function()
 					{
 						$("#artist").html(json.artist);
-						$("#artist").fadeIn(1000);
+						$("#artist").fadeTo(1000, 1);
 					}, 2000);
 				}
 			}, priv.latency * 10000);
