@@ -137,12 +137,18 @@ h4
 	position: fixed;
 	right: 10px;
 	top: 10px;
-	width: 200px;
+	min-width: 150px;
 	background-color: rgb(230, 227, 215);
 	padding: 10px;
 	border-radius: 5px;
-	box-shadow: -1px 2px 10px 0px black inset;
+	box-shadow: -1px 2px 10px 0px rgba(0, 0, 0, 0.63) inset;
 	font-family: prompt;
+	-webkit-transition: width 1s;
+	-moz-transition: width 1s;
+	transition: width 1s;
+	-webkit-transition-timing-function: ease;
+	-moz-transition-timing-function: ease;
+	transition-timing-function: ease;
 }
 
 #track h5

@@ -98,6 +98,7 @@
 			dataType: 'json'
 		}).done(function(json)
 		{
+			console.log(json.is_running);
 			if (!json.is_running)
 			{
 				priv.set_offline();
@@ -112,7 +113,7 @@
 					{
 						$("title").val(json.title);
 						$("title").fadeIn(1000);
-					});
+					}, 2000);
 				}
 				if ($("artist").val() != json.artist)
 				{
@@ -121,7 +122,7 @@
 					{
 						$("artist").val(json.artist);
 						$("artist").fadeIn(1000);
-					});
+					}, 2000);
 				}
 			}, priv.latency * 10000);
 		});
