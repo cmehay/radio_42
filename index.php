@@ -11,8 +11,9 @@
 	<body>
 		<h4>$> ./radio_42</h4>
 		<div id="track">
-			<div id="title"></div>
-			<div id="artist"></div>
+			<h5>Now playing:</h5>
+			<div id="title">Title</div>
+			<div id="artist">Artist</div>
 		</div>
 		<audio preload volume="0.0" src="http://42.ham-radio-op.net:8080"></audio>
 		<div id="englobe">
@@ -24,5 +25,9 @@
 		</div>
 		<div id="wait" class="center"><p>Please wait...</p></div>
 		<div id="offline" class="center hidden"><p>Offline :/</p></div>
+		<div id="vlc" class="center large hidden">
+			<p>http://42.ham-radio-op.net:8080</p>
+		</div>
+		<div id="footer">Listen in VLC</div>
 	</body>
 </html>

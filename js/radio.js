@@ -4,6 +4,16 @@
 	var radio = {};
 	var priv = {};
 
+	priv.latency = 0;
+	priv.ispaused = 1;
+	priv.isoffline = 0;
+
+	setInterval(function()
+	{
+		if (priv.ispaused)
+			priv.latency++;
+	}, 1000);
+
 	priv.set_audio = function()
 	{
 		priv.audio = document.getElementsByTagName('audio')[0];
@@ -31,10 +41,12 @@
 		priv.audio.play();
 		$("audio").animate({volume: 1.0}, 1000);
 		priv.start_anim();
+		priv.ispaused = 0;
 	};
 
 	priv.pause = function()
 	{
+		$("#round").removeClass('click');
 		$("#play_button").removeClass('hidden');
 		$("#pause_button").addClass('hidden');
 		$("audio").animate({volume: 0.0}, 1000);
@@ -42,6 +54,8 @@
 		{
 			priv.audio.pause();
 			priv.stop_anim();
+			$("#round").addClass('click');
+			priv.ispaused = 1;
 		}, 1000);
 	}
 
@@ -53,7 +67,8 @@
 			{
 				$("#englobe").css({ 'background-color': 'rgba(0, 0, 0, 0.0)' });
 				$("#wait").fadeOut(500);
-				$("#round").addClass('dont_click');
+				$("#track").fadeIn(500);
+				$("#round").addClass('click');
 				setTimeout(function()
 					{
 						$("#wait").addClass('hidden');
@@ -61,23 +76,80 @@
 			}, 5000);
 	}
 
-	radio.place_button = function()
+	priv.set_offline = function()
 	{
-		var hei = $("#englobe").height();
-		var wid = $("#englobe").width();
-		var but_hei = $("#player_button").height();
-		var but_wid = $("#player_button").width();
+		priv.pause();
+		$("#vlc").fadeOut(500);
+		$("#wait").fadeOut(500);
+		$("#englobe").css({ 'background-color': 'rgba(0, 0, 0, 0.7)' });
+		$("#offline").fadeIn(500);
+		$("#round").addClass('click');
+	}
 
-		$("#player_button").css("top", (hei - but_hei) / 2);
-		$("#player_button").css("left", (wid - but_wid) / 2);
+	priv.copy_to_clipbloard = function() {
+		window.prompt("Copy link and paste it in VLC", $("audio").attr("src"));
+	}
+
+	priv.check_song = function()
+	{
+		$.ajax({
+			url:'gimme_song.php',
+			type: 'GET',
+			dataType: 'json'
+		}).done(function(json)
+		{
+			if (!json.is_running)
+			{
+				priv.set_offline();
+				return ;
+			}
+			setTimeout(function()
+			{
+				if ($("title").val() != json.title)
+				{
+					$("title").fadeOut(1000);
+					setTimeout(function()
+					{
+						$("title").val(json.title);
+						$("title").fadeIn(1000);
+					});
+				}
+				if ($("artist").val() != json.artist)
+				{
+					$("artist").fadeOut(1000);
+					setTimeout(function()
+					{
+						$("artist").val(json.artist);
+						$("artist").fadeIn(1000);
+					});
+				}
+			}, priv.latency * 1000);
+		});
+	}
+
+	priv.display_vlc = function()
+	{
+		priv.copy_to_clipbloard();
+//		$("#englobe").css({ 'background-color': 'rgba(0, 0, 0, 0.7)' });
+//		$("#vlc").fadeIn(500);
+//		$("#round").removeClass('click');
+	}
+
+	priv.hide_vlc = function()
+	{
+		$("#englobe").css({ 'background-color': 'rgba(0, 0, 0, 0.0)' });
+		$("#vlc").fadeOut(500);
+		$("#round").addClass('click');
 	}
 
 	radio.onready = function()
 	{
-
+		priv.start_anim();
 		priv.stop_anim();
 		priv.set_audio();
+
 		priv.buffer();
+
 		$("#play_button").click(function()
 		{
 			priv.play();
@@ -87,6 +159,21 @@
 		{
 			priv.pause();
 		});
+
+		$("#footer").click(function()
+		{
+			priv.display_vlc();
+		});
+
+		$("#vlc").click(function()
+		{
+			priv.hide_vlc();
+		});
+
+		setInterval(function()
+		{
+			priv.check_song();
+		}, 10000);
 	};
 
 	window.radio = radio;
