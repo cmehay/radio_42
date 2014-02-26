@@ -12,8 +12,7 @@
 	{
 		if (priv.ispaused)
 			priv.latency++;
-		console.log(priv.latency);
-	}, 1000);
+	}, 10000);
 
 	priv.set_audio = function()
 	{
@@ -124,7 +123,7 @@
 						$("artist").fadeIn(1000);
 					});
 				}
-			}, priv.latency * 1000);
+			}, priv.latency * 10000);
 		});
 	}
 
