@@ -114,6 +114,9 @@
 						$("#title").fadeTo(1000, 1);
 					}, 2000);
 				}
+				console.log($("#artist").html());
+				console.log(json.artist);
+
 				if ($("#artist").html() != json.artist)
 				{
 					$("#artist").fadeTo(1000, 0);
