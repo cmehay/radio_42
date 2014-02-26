@@ -164,6 +164,12 @@ h4
 
 #track #artist
 {
+	height: 0.8em;
+	font-size: 0.8em;
+}
+
+#track #artist
+{
 }
 
 @-webkit-keyframes rotate {
