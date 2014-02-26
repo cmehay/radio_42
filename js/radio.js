@@ -98,7 +98,6 @@
 			dataType: 'json'
 		}).done(function(json)
 		{
-			console.log(json.is_running);
 			if (!json.is_running)
 			{
 				priv.set_offline();
@@ -106,22 +105,22 @@
 			}
 			setTimeout(function()
 			{
-				if ($("title").val() != json.title)
+				if ($("#title").val() != json.title)
 				{
-					$("title").fadeOut(1000);
+					$("#title").fadeOut(1000);
 					setTimeout(function()
 					{
-						$("title").val(json.title);
-						$("title").fadeIn(1000);
+						$("#title").val(json.title);
+						$("#title").fadeIn(1000);
 					}, 2000);
 				}
-				if ($("artist").val() != json.artist)
+				if ($("#artist").val() != json.artist)
 				{
-					$("artist").fadeOut(1000);
+					$("#artist").fadeOut(1000);
 					setTimeout(function()
 					{
-						$("artist").val(json.artist);
-						$("artist").fadeIn(1000);
+						$("#artist").val(json.artist);
+						$("#artist").fadeIn(1000);
 					}, 2000);
 				}
 			}, priv.latency * 10000);
