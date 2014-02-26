@@ -62,7 +62,7 @@
 	priv.buffer = function()
 	{
 		priv.audio.play();
-		setTimeout(priv.audio.pause(), 10);
+		setTimeout(priv.audio.pause, 10);
 		setTimeout(function()
 			{
 				$("#englobe").css({ 'background-color': 'rgba(0, 0, 0, 0.0)' });
