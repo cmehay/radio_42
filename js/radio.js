@@ -145,7 +145,9 @@
 	radio.onready = function()
 	{
 		priv.start_anim();
-		priv.stop_anim();
+		setTimeout(function(){
+			priv.stop_anim();
+		}, 10);
 		priv.set_audio();
 
 		priv.buffer();
