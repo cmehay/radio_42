@@ -105,7 +105,7 @@
 			}
 			setTimeout(function()
 			{
-				if ($("#title").val() != json.title)
+				if ($("#title").html() != json.title)
 				{
 					$("#title").fadeOut(1000);
 					setTimeout(function()
@@ -114,7 +114,7 @@
 						$("#title").fadeIn(1000);
 					}, 2000);
 				}
-				if ($("#artist").val() != json.artist)
+				if ($("#artist").html() != json.artist)
 				{
 					$("#artist").fadeOut(1000);
 					setTimeout(function()
