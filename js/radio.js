@@ -110,7 +110,7 @@
 					$("#title").fadeOut(1000);
 					setTimeout(function()
 					{
-						$("#title").val(json.title);
+						$("#title").html(json.title);
 						$("#title").fadeIn(1000);
 					}, 2000);
 				}
@@ -119,7 +119,7 @@
 					$("#artist").fadeOut(1000);
 					setTimeout(function()
 					{
-						$("#artist").val(json.artist);
+						$("#artist").html(json.artist);
 						$("#artist").fadeIn(1000);
 					}, 2000);
 				}
