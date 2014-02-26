@@ -12,6 +12,7 @@
 	{
 		if (priv.ispaused)
 			priv.latency++;
+		console.log(priv.latency);
 	}, 1000);
 
 	priv.set_audio = function()
@@ -144,6 +145,7 @@
 
 	radio.onready = function()
 	{
+		//fix bug animation on chrome
 		priv.start_anim();
 		setTimeout(function(){
 			priv.stop_anim();
