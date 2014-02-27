@@ -140,7 +140,7 @@ h4
 #track
 {
 	position: fixed;
-	right: 10px;
+	left: 10px;
 	bottom: 0px;
 /*	min-width: 200px;*/
 /*	background-color: rgb(230, 227, 215);*/
@@ -159,6 +159,7 @@ h4
 #track h5
 {
 	margin-top: 5px;
+	display: none;
 }
 
 #track div

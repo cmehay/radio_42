@@ -119,7 +119,7 @@
 					}, 2000);
 				}
 
-				if ($("#artist").text() != json.artist !priv.ispaused)
+				if ($("#artist").text() != json.artist && !priv.ispaused)
 				{
 					$("#artist").fadeTo(1000, 0);
 					setTimeout(function()
