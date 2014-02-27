@@ -3,7 +3,6 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-
 		<title>Radio quarante-deux</title>
 		<link rel="stylesheet" href="style/style.css">
 		<link rel="icon" type="image/png" href="style/img/ico.png" />
@@ -14,8 +13,8 @@
 		<h4>$> ./radio_42</h4>
 		<div id="track">
 			<h5>Now playing:</h5>
-			<div id="title"> </div>
-			<div id="artist">Nothing</div>
+			<div id="title"></div>
+			<div id="artist"></div>
 		</div>
 		<audio preload volume="0.0" src="http://42.ham-radio-op.net:8080"></audio>
 		<div id="englobe">
