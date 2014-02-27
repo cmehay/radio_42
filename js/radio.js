@@ -109,7 +109,7 @@
 			}
 			setTimeout(function()
 			{
-				if ($("#title").text() != json.title)
+				if ($("#title").text() != json.title && !priv.ispaused)
 				{
 					$("#title").fadeTo(1000, 0);
 					setTimeout(function()
@@ -119,7 +119,7 @@
 					}, 2000);
 				}
 
-				if ($("#artist").text() != json.artist)
+				if ($("#artist").text() != json.artist !priv.ispaused)
 				{
 					$("#artist").fadeTo(1000, 0);
 					setTimeout(function()
