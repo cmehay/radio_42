@@ -4,7 +4,7 @@
 	var radio = {};
 	var priv = {};
 
-	priv.latency = 0;
+	priv.latency = 1;
 	priv.ispaused = 1;
 	priv.isoffline = 0;
 
