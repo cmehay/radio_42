@@ -1,5 +1,7 @@
 <?php
 
+define(RADIO_USER, "radio");
+
 $list_jobs = shell_exec('sudo /opt/sbin/list_radio_jobs');
 
 $list_jobs = str_replace("\t", " ", $list_jobs);
@@ -13,10 +15,8 @@ foreach ($list_jobs as $idx => $jobs)
 
 foreach ($list_jobs as $key => $value)
 {
-	foreach ($value as $key2 => $value2) {
-		echo "$value2\n";
-	}
-	echo "\n";
+	if ($value[7] == RADIO_USER)
+		echo $value[0];
 }
 
 ?>
