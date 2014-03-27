@@ -8,7 +8,7 @@ if (!strstr($mpc, '[playing]'))
 	exit ;
 }
 
-$array = explode( "\n", $mpc);
+$array = explode("\n", $mpc);
 
 $json_array = array(
 	'is_running' => TRUE,

@@ -2,6 +2,8 @@
 
 $list_jobs = shell_exec('sudo /opt/sbin/list_radio_jobs');
 
+str_replace($list_jobs, "\t", ' ');
+
 $list_jobs = explode("\n", $list_jobs);
 
 foreach ($list_jobs as $idx => $jobs)
