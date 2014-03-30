@@ -163,20 +163,20 @@
 						$("#program_name").fadeTo(1000, 0);
 					if ($("#date").data("timestamp") != json[obj].timestamp)
 						$("#date").fadeTo(1000, 0);
-					setTimeout(function()
-					{
-						$("#program_name").html(json[obj].title);
-						$("#date").data("timestamp", json[obj].timestamp);
-						$("#date").trigger('data-timestamp');
-						if ($("#program").css("opacity") == 0)
-							$("#program").fadeTo(1000, 1);
-						else
-						{
-							$("#date").fadeTo(1000, 1);
-							$("#program_name").fadeTo(1000, 1);
-						}
-					}, 2000);
 				}
+				setTimeout(function()
+				{
+					$("#program_name").html(json[obj].title);
+					$("#date").data("timestamp", json[obj].timestamp);
+					$("#date").trigger('data-timestamp');
+					if ($("#program").css("opacity") == 0)
+						$("#program").fadeTo(1000, 1);
+					else
+					{
+						$("#date").fadeTo(1000, 1);
+						$("#program_name").fadeTo(1000, 1);
+					}
+				}, 2000);
 			}
 		});
 	}
