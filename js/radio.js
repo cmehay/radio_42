@@ -177,7 +177,7 @@
 					}, 2000);
 				}
 			}
-		}
+		});
 	}
 
 	priv.timestamp_to_date = function()
