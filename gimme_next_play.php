@@ -43,9 +43,9 @@ foreach ($job_idx as $key => $unused)
 	$job_idx[$key]['cmd'] = explode("\n", $job_idx[$key]['cmd']);
 	foreach ($job_idx[$key]['cmd'] as $content)
 	{
-		echo $content;
 		if (strpos($content, PLAY_EMISSION))
 		{
+			echo $content;
 			$job_idx[$key]['cmd'] = strrchr($content, ' ');
 			break ;
 		}
