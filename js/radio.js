@@ -157,17 +157,18 @@
 			{
 				var obj = rand % json.jobs_num;
 				console.log(obj);
+
 				if ($("#program").css("opacity") != 0)
 				{
-					if ($("#program_name").text() != json[obj].title)
+					if ($("#program_name").text() != json.jobs[obj].title)
 						$("#program_name").fadeTo(1000, 0);
-					if ($("#date").data("timestamp") != json[obj].timestamp)
+					if ($("#date").data("timestamp") != json.jobs[obj].timestamp)
 						$("#date").fadeTo(1000, 0);
 				}
 				setTimeout(function()
 				{
-					$("#program_name").html(json[obj].title);
-					$("#date").data("timestamp", json[obj].timestamp);
+					$("#program_name").html(json.jobs[obj].title);
+					$("#date").data("timestamp", json.jobs[obj].timestamp);
 					$("#date").trigger('data-timestamp');
 					if ($("#program").css("opacity") == 0)
 						$("#program").fadeTo(1000, 1);
