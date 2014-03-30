@@ -68,16 +68,16 @@
 
 		}, 10);
 		setTimeout(function()
+		{
+			$("#englobe").css({ 'background-color': 'rgba(0, 0, 0, 0.0)' });
+			$("#wait").fadeOut(500);
+			$("#track").fadeIn(500);
+			$("#round").addClass('click');
+			setTimeout(function()
 			{
-				$("#englobe").css({ 'background-color': 'rgba(0, 0, 0, 0.0)' });
-				$("#wait").fadeOut(500);
-				$("#track").fadeIn(500);
-				$("#round").addClass('click');
-				setTimeout(function()
-					{
-						$("#wait").addClass('hidden');
-					}, 500);
-			}, 5000);
+				$("#wait").addClass('hidden');
+			}, 500);
+		}, 5000);
 	}
 
 	priv.set_offline = function()
@@ -132,6 +132,69 @@
 		});
 	}
 
+	priv.set_am_pm = function(date)
+	{
+		var hours = date.getHours();
+		var minutes = date.getMinutes();
+		var ampm = (hours >= 12) ? 'pm' : 'am';
+		hours = hours % 12;
+		hours = (hours ? hours) : 12;
+		minutes = (minutes < 10) ? '0'+minutes : minutes;
+		var strTime = hours + ':' + minutes + ' ' + ampm;
+		return (strTime);
+	}
+
+	priv.get_program = function()
+	{
+		$.ajax({
+			url:'gimme_program.php',
+			type: 'GET',
+			dataType: 'json'
+		}).done(function(json)
+		{
+			var rand = Math.floor((Math.random() * 100));
+			if (json.jobs_num > 0)
+			{
+				var obj = rand % json.jobs_num;
+				if ($("#program").css("opacity") != 0)
+				{
+					if ($("#program_name").text() != json[obj].title)
+						$("#program_name").fadeTo(1000, 0);
+					if ($("#date").data("timestamp") != json[obj].timestamp)
+						$("#date").fadeTo(1000, 0);
+					setTimeout(function()
+					{
+						$("#program_name").html(json[obj].title);
+						$("#date").data("timestamp", json[obj].timestamp);
+						$("#date").trigger('data-timestamp');
+						if ($("#program").css("opacity") == 0)
+							$("#program").fadeTo(1000, 1);
+						else
+						{
+							$("#date").fadeTo(1000, 1);
+							$("#program_name").fadeTo(1000, 1);
+						}
+					}, 2000);
+				}
+			}
+		}
+	}
+
+	priv.timestamp_to_date = function()
+	{
+		var timestamp = $("#date").data("timestamp");
+		if (!timestamp)
+			return ;
+		var date = new Date(timestamp * 1000);
+		weekday =["Sunday","Monday", "Tuesday", "Wednesday", "Thursday",
+			"Friday", "Saturday"];
+		month =["January","February", "March", "April", "May", "June",
+			"July", "August", "September", "October", "November", "December"];
+		var date_str = weekday[date.getDay()] + ' ' + date.getDate() + ' ' +
+			month[date.getMonth()] + ' at ' + priv.set_am_pm(date);
+		$("#date").html(date_str);
+	}
+
 	priv.display_vlc = function()
 	{
 		priv.copy_to_clipbloard();
@@ -163,6 +226,11 @@
 			priv.play();
 		});
 
+		$("#date").on('data-timestamp', function()
+		{
+			priv.timestamp_to_date();
+		});
+
 		$("#pause_button").click(function()
 		{
 			priv.pause();
@@ -182,6 +250,11 @@
 		{
 			priv.check_song();
 		}, 10000);
+
+		setInterval(function()
+		{
+			priv.get_program();
+		}, 14500);
 	};
 
 	window.radio = radio;

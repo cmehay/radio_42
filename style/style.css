@@ -178,6 +178,31 @@ h4
 {
 }
 
+#program
+{
+	opacity: 0;
+	position: fixed;
+	right: 10px;
+	top: 0px;
+}
+
+#program h5
+{
+	margin-top: 5px;
+}
+
+#program div
+{
+	text-align: right;
+	height: 1em;
+}
+
+#program #date
+{
+	height: 0.8em;
+	font-size: 0.8em;
+}
+
 @-webkit-keyframes rotate {
   from {
     -webkit-transform: rotate(0deg);
