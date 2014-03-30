@@ -43,7 +43,7 @@ foreach ($job_idx as $key => $unused)
 	$job_idx[$key]['cmd'] = explode("\n", $job_idx[$key]['cmd']);
 	foreach ($job_idx[$key]['cmd'] as $content)
 	{
-		if (strpos($content, PLAY_EMISSION))
+		if (strpos($content, PLAY_EMISSION) !== FALSE)
 		{
 			echo $content;
 			$job_idx[$key]['cmd'] = strrchr($content, ' ');
@@ -57,9 +57,9 @@ foreach ($job_idx as $key => $unused)
 		$job_idx[$key]['file_info'] = explode("\n", $job_idx[$key]['file_info']);
 		foreach ($job_idx[$key]['file_info'] as $info)
 		{
-			if (strpos($info, 'TPE1'))
+			if (strpos($info, 'TPE1') !== FALSE)
 				$job_idx[$key]['artist'] = strstr($info, ':');
-			elseif (strpos($info, 'TIT2'))
+			elseif (strpos($info, 'TIT2') !== FALSE)
 				$job_idx[$key]['title'] = strstr($info, ':');
 		}
 		$job_idx[$key]['timestamp'] = $job_idx[$key]['timestamp'];
