@@ -57,9 +57,9 @@ foreach ($job_idx as $key => $unused)
 		foreach ($job_idx[$key]['file_info'] as $info)
 		{
 			if (strpos($info, 'TPE1') !== FALSE)
-				$job_idx[$key]['artist'] = strstr($info, ':');
+				$job_idx[$key]['artist'] = substr(strstr($info, ':'), 2);
 			elseif (strpos($info, 'TIT2') !== FALSE)
-				$job_idx[$key]['title'] = strstr($info, ':');
+				$job_idx[$key]['title'] = substr(strstr($info, ':'), 2);
 		}
 		$job_idx[$key]['timestamp'] = $job_idx[$key]['timestamp'];
 	}
