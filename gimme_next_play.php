@@ -36,7 +36,7 @@ if (!isset($job_idx))
 	exit ;
 }
 
-foreach ($job_idx as $key => $value)
+foreach ($job_idx as $key => $unused)
 {
 	$job_idx[$key]['cmd'] = shell_exec(GET_RADIO_JOBS .
 		' ' . $job_idx[$key]['idx']);
@@ -57,15 +57,26 @@ foreach ($job_idx as $key => $value)
 		foreach ($job_idx[$key]['file_info'] as $info)
 		{
 			if (strpos($info, 'TPE1'))
-				$json_return[$key]['artist'] = strstr($info, ':');
+				$job_idx[$key]['artist'] = strstr($info, ':');
 			elseif (strpos($info, 'TIT2'))
-				$json_return[$key]['title'] = strstr($info, ':');
+				$job_idx[$key]['title'] = strstr($info, ':');
 		}
-		$json_return['jobs_num'] = $key + 1;
-		$json_return[$key]['timestamp'] = $job_idx[$key]['timestamp'];
+		$job_idx[$key]['timestamp'] = $job_idx[$key]['timestamp'];
 	}
 }
 
-echo(json_encode(json_return));
+$i = 0;
+foreach ($job_idx as $key => $unused)
+{
+	if ($job_idx[$key]['artist'] && $job_idx[$key]['title'])
+	{
+		$json_return['jobs'][$i]['timestamp'] = $job_idx[$key]['timestamp'];
+		$json_return['jobs'][$i]['artist'] = $job_idx[$key]['artist'];
+		$json_return['jobs'][$i]['title'] = $job_idx[$key]['title'];
+		$json_return['jobs_num'] = ++$i;
+	}
+}
+
+echo(json_encode($json_return));
 
 ?>
