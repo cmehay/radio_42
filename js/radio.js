@@ -159,9 +159,9 @@
 				if ($("#program").css("opacity") != 0)
 				{
 					if ($("#program_name").text() != json.jobs[obj].title)
-						$("#program_name").fadeTo(1000, 0);
+						$("#program_name").fadeTo(2000, 0);
 					if ($("#date").data("timestamp") != json.jobs[obj].timestamp)
-						$("#date").fadeTo(1000, 0);
+						$("#date").fadeTo(2000, 0);
 				}
 				setTimeout(function()
 				{
@@ -169,14 +169,16 @@
 					$("#date").data("timestamp", json.jobs[obj].timestamp);
 					$("#date").trigger('data-timestamp');
 					if ($("#program").css("opacity") == 0)
-						$("#program").fadeTo(1000, 1);
+						$("#program").fadeTo(2000, 1);
 					else
 					{
-						$("#date").fadeTo(1000, 1);
-						$("#program_name").fadeTo(1000, 1);
+						$("#date").fadeTo(2000, 1);
+						$("#program_name").fadeTo(2000, 1);
 					}
-				}, 2000);
+				}, 3000);
 			}
+			else if ($("#program").css("opacity") != 0)
+				$("#program").fadeTo(2000, 0);
 		});
 	}
 
