@@ -188,9 +188,9 @@
 		if (!timestamp)
 			return ;
 		var date = new Date(timestamp * 1000);
-		weekday =["Sunday","Monday", "Tuesday", "Wednesday", "Thursday",
+		var weekday =["Sunday","Monday", "Tuesday", "Wednesday", "Thursday",
 			"Friday", "Saturday"];
-		month =["January","February", "March", "April", "May", "June",
+		var month =["January","February", "March", "April", "May", "June",
 			"July", "August", "September", "October", "November", "December"];
 		var date_str = weekday[date.getDay()] + ' ' + date.getDate() + ' ' +
 			month[date.getMonth()] + ' at ' + priv.set_am_pm(date);
