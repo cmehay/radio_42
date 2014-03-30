@@ -156,6 +156,7 @@
 			if (json.jobs_num > 0)
 			{
 				var obj = rand % json.jobs_num;
+				console.log(obj);
 				if ($("#program").css("opacity") != 0)
 				{
 					if ($("#program_name").text() != json[obj].title)
