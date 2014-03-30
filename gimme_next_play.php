@@ -25,7 +25,7 @@ foreach ($list_jobs as $value)
 		$job_idx[$i]['idx'] = $value[0];
 		$job_idx[$i++]['timestamp'] =
 			strtotime($value[3] . '/' . $value[2] . '/' . $value[5] .
-				':' . $value[4]);
+				':' . $value[4] . '-0000');
 	}
 }
 
@@ -45,7 +45,6 @@ foreach ($job_idx as $key => $unused)
 	{
 		if (strpos($content, PLAY_EMISSION) !== FALSE)
 		{
-			echo $content;
 			$job_idx[$key]['cmd'] = strrchr($content, ' ');
 			break ;
 		}
