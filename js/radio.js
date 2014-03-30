@@ -134,8 +134,8 @@
 
 	priv.set_am_pm = function(date)
 	{
-		var hours = date.getHours();
-		var minutes = date.getMinutes();
+		var hours = date.getUTCHours();
+		var minutes = date.getUTCMinutes();
 		var ampm = (hours >= 12) ? 'pm' : 'am';
 		hours = hours % 12;
 		hours = (hours) ? hours : 12;
@@ -156,8 +156,6 @@
 			if (json.jobs_num > 0)
 			{
 				var obj = rand % json.jobs_num;
-				console.log(obj);
-
 				if ($("#program").css("opacity") != 0)
 				{
 					if ($("#program_name").text() != json.jobs[obj].title)
@@ -192,8 +190,8 @@
 			"Friday", "Saturday"];
 		var month =["January","February", "March", "April", "May", "June",
 			"July", "August", "September", "October", "November", "December"];
-		var date_str = weekday[date.getDay()] + ' ' + date.getDate() + ' ' +
-			month[date.getMonth()] + ' at ' + priv.set_am_pm(date);
+		var date_str = weekday[date.getUTCDay()] + ' ' + date.getUTCDate() +
+		' ' + month[date.getUTCMonth()] + ' at ' + priv.set_am_pm(date);
 		$("#date").html(date_str);
 	}
 
