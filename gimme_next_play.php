@@ -68,7 +68,7 @@ foreach ($job_idx as $key => $unused)
 $i = 0;
 foreach ($job_idx as $key => $unused)
 {
-	if ($job_idx[$key]['artist'] && $job_idx[$key]['title'])
+	if (isset($job_idx[$key]['artist']) && isset($job_idx[$key]['title']))
 	{
 		$json_return['jobs'][$i]['timestamp'] = $job_idx[$key]['timestamp'];
 		$json_return['jobs'][$i]['artist'] = $job_idx[$key]['artist'];
