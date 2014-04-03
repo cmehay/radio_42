@@ -24,7 +24,7 @@ foreach ($list_jobs as $value)
 	{
 		$job_idx[$i]['idx'] = $value[0];
 		$job_idx[$i++]['timestamp'] =
-			strtotime($value[3] . '/' . $value[2] . '/' . $value[5] .
+			strtotime(sprintf("%02s", $value[3]) . '/' . $value[2] . '/' . $value[5] .
 				':' . $value[4] . ' -0000');
 	}
 }
