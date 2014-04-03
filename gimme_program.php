@@ -17,13 +17,13 @@ foreach ($list_jobs as $idx => $jobs)
 	$list_jobs[$idx] = explode(' ', $jobs);
 }
 
+$list_jobs = array_filter($list_jobs, 'strlen');
+
 $i = 0;
 foreach ($list_jobs as $value)
 {
-	echo $value[7];
 	if ($value[7] == RADIO_USER)
 	{
-		$job_idx[$i]['idx'] = $value[0];
 		echo sprintf("%02s", $value[3]) . '/' . $value[2] . '/' . $value[5] .
 				':' . $value[4] . ' -0000';
 		$job_idx[$i++]['timestamp'] =
