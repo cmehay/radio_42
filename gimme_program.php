@@ -20,6 +20,7 @@ foreach ($list_jobs as $idx => $jobs)
 $i = 0;
 foreach ($list_jobs as $value)
 {
+	echp $value[7];
 	if ($value[7] == RADIO_USER)
 	{
 		$job_idx[$i]['idx'] = $value[0];
