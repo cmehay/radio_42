@@ -21,11 +21,8 @@ foreach ($list_jobs as $idx => $jobs)
 $i = 0;
 foreach ($list_jobs as $value)
 {
-	echo $value[7];
 	if ($value[7] == RADIO_USER)
 	{
-		echo strtotime(sprintf("%02s", $value[3]) . '/' . $value[2] . '/' . $value[5] .
-				':' . $value[4] . ' -0000');
 		$job_idx[$i++]['timestamp'] =
 			strtotime(sprintf("%02s", $value[3]) . '/' . $value[2] . '/' . $value[5] .
 				':' . $value[4] . ' -0000');
@@ -67,6 +64,8 @@ foreach ($job_idx as $key => $unused)
 		$job_idx[$key]['timestamp'] = $job_idx[$key]['timestamp'];
 	}
 }
+
+var_dump($job_idx);
 
 $i = 0;
 foreach ($job_idx as $key => $unused)
