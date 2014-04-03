@@ -15,7 +15,9 @@ $list_jobs = explode("\n", $list_jobs);
 foreach ($list_jobs as $idx => $jobs)
 {
 	$list_jobs[$idx] = array_filter(explode(' ', $jobs), 'strlen');
+	var_dump($list_jobs[$idx]);
 }
+
 
 $i = 0;
 foreach ($list_jobs as $value)
