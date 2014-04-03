@@ -24,8 +24,8 @@ foreach ($list_jobs as $value)
 	echo $value[7];
 	if ($value[7] == RADIO_USER)
 	{
-		echo sprintf("%02s", $value[3]) . '/' . $value[2] . '/' . $value[5] .
-				':' . $value[4] . ' -0000';
+		echo strtotime(sprintf("%02s", $value[3]) . '/' . $value[2] . '/' . $value[5] .
+				':' . $value[4] . ' -0000');
 		$job_idx[$i++]['timestamp'] =
 			strtotime(sprintf("%02s", $value[3]) . '/' . $value[2] . '/' . $value[5] .
 				':' . $value[4] . ' -0000');
