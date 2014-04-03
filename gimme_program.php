@@ -23,6 +23,7 @@ foreach ($list_jobs as $value)
 {
 	if ($value[7] == RADIO_USER)
 	{
+		$job_idx[$i]['idx'] = $value[0];
 		$job_idx[$i++]['timestamp'] =
 			strtotime(sprintf("%02s", $value[3]) . '/' . $value[2] . '/' . $value[5] .
 				':' . $value[4] . ' -0000');
@@ -64,8 +65,6 @@ foreach ($job_idx as $key => $unused)
 		$job_idx[$key]['timestamp'] = $job_idx[$key]['timestamp'];
 	}
 }
-
-var_dump($job_idx);
 
 $i = 0;
 foreach ($job_idx as $key => $unused)
