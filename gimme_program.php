@@ -14,10 +14,8 @@ $list_jobs = explode("\n", $list_jobs);
 
 foreach ($list_jobs as $idx => $jobs)
 {
-	$list_jobs[$idx] = explode(' ', $jobs);
+	$list_jobs[$idx] = array_filter(explode(' ', $jobs), 'strlen');
 }
-
-$list_jobs = array_filter($list_jobs, 'strlen');
 
 $i = 0;
 foreach ($list_jobs as $value)
