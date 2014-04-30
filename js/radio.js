@@ -185,7 +185,7 @@
 	priv.get_listeners = function()
 	{
 		$.ajax({
-			url:'gimme_listners.php',
+			url:'gimme_listeners.php',
 			type: 'GET',
 			dataType: 'json'
 		}).done(function(json)
