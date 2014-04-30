@@ -182,6 +182,36 @@
 		});
 	}
 
+	priv.get_listeners = function()
+	{
+		$.ajax({
+			url:'gimme_listners.php',
+			type: 'GET',
+			dataType: 'json'
+		}).done(function(json)
+		{
+			if ($("#listeners").css("opacity") != 0)
+			{
+				if ($("#num").text() != json.num)
+					$("#num").fadeTo(2000, 0);
+				if ($("#str").text() != json.str)
+					$("#str").fadeTo(2000, 0);
+			}
+			setTimeout(function()
+			{
+				$("#num").html(json.num);
+				$("#str").html(json.str);
+				if ($("#listeners").css("opacity") == 0)
+					$("#listeners").fadeTo(2000, 1);
+				else
+				{
+					$("#num").fadeTo(2000, 1);
+					$("#str").fadeTo(2000, 1);
+				}
+			}, 3000);
+		});
+	}
+
 	priv.timestamp_to_date = function()
 	{
 		var timestamp = $("#date").data("timestamp");
@@ -257,6 +287,11 @@
 		{
 			priv.get_program();
 		}, 14500);
+
+		setInterval(function()
+		{
+			priv.get_listeners();
+		}, 30100);
 	};
 
 	window.radio = radio;
