@@ -1,10 +1,10 @@
 <?php
 
-define(RADIO_USER, 'radio');
-define(LIST_RADIO_JOBS, 'sudo /opt/sbin/list_radio_jobs');
-define(GET_RADIO_JOBS, 'sudo /opt/sbin/get_radio_jobs');
-define(GET_EMISSION_INFO, 'sudo /opt/sbin/get_emission_info');
-define(PLAY_EMISSION, 'play_emission ');
+define('RADIO_USER', 'radio');
+define('LIST_RADIO_JOBS', 'sudo /opt/sbin/list_radio_jobs');
+define('GET_RADIO_JOBS', 'sudo /opt/sbin/get_radio_jobs');
+define('GET_EMISSION_INFO', 'sudo /opt/sbin/get_emission_info');
+define('PLAY_EMISSION', 'play_emission ');
 
 $list_jobs = shell_exec(LIST_RADIO_JOBS);
 
@@ -21,7 +21,7 @@ foreach ($list_jobs as $idx => $jobs)
 $i = 0;
 foreach ($list_jobs as $value)
 {
-	if ($value[7] == RADIO_USER)
+	if (isset($value[7]) && $value[7] == RADIO_USER)
 	{
 		$job_idx[$i]['idx'] = $value[0];
 		$job_idx[$i++]['timestamp'] =
