@@ -300,3 +300,9 @@
 $(document).ready(function(){
 	radio.onready();
 });
+
+function		setVolume() {
+	vol = document.getElementById("volumeslider").value / 100;
+	$("audio").animate({volume: vol}, 1000);
+//	alert(vol);
+}
