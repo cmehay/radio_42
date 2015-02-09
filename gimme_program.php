@@ -1,9 +1,9 @@
 <?php
 
 define('RADIO_USER', 'radio');
-define('LIST_RADIO_JOBS', 'sudo /opt/sbin/list_radio_jobs');
-define('GET_RADIO_JOBS', 'sudo /opt/sbin/get_radio_jobs');
-define('GET_EMISSION_INFO', 'sudo /opt/sbin/get_emission_info');
+define('LIST_RADIO_JOBS', 'sudo /opt/bin/list_radio_jobs');
+define('GET_RADIO_JOBS', 'sudo /opt/bin/get_radio_jobs');
+define('GET_EMISSION_INFO', 'sudo /opt/bin/get_emission_info');
 define('PLAY_EMISSION', 'play_emission ');
 
 $list_jobs = shell_exec(LIST_RADIO_JOBS);
